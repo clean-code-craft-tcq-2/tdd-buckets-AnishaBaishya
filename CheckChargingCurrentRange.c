@@ -44,7 +44,7 @@ int CheckChargingCurrentSamplesRange (int *CurrentSamples, int NumOfCurrentSampl
       printf("NumOfChargingCurrentRanges1 %d \n",NumOfChargingCurrentRanges);
       NumOfChargingCurrentRanges++;
     }
-    else if(LoopIndex == (NumOfCurrentSamples-2)){
+    if(LoopIndex == (NumOfCurrentSamples-2)){
       NumOfChargingCurrentRanges++;
       printf("NumOfChargingCurrentRanges2 %d \n",NumOfChargingCurrentRanges);
     }
