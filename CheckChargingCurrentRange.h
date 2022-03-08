@@ -1,0 +1,1 @@
+int CheckChargingCurrentSamplesRange (int *CurrentSamples)
