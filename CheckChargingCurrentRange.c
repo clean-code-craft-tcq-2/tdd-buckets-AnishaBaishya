@@ -25,5 +25,5 @@ int CheckChargingCurrentSamplesRange (int *CurrentSamples){
       NumOfConsecutiveRange ++;
     }
   }
-       return NumOfConsecutiveRange;
+       return NumOfConsecutiveRange+1;
 }
