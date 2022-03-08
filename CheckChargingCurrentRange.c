@@ -49,5 +49,6 @@ int CheckChargingCurrentSamplesRange (int *CurrentSamples, int NumOfCurrentSampl
       printf("NumOfChargingCurrentRanges2 %d \n",NumOfChargingCurrentRanges);
     }
   }
+  printf("NumOfChargingCurrentRanges3 %d \n",NumOfChargingCurrentRanges);
   return NumOfChargingCurrentRanges;
 }
