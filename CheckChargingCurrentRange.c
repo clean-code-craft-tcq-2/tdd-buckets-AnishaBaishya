@@ -16,6 +16,7 @@ int CheckChargingCurrentSamplesRange (int *CurrentSamples){
                Temp = CurrentSamples[LoopIndex];    
                CurrentSamples[LoopIndex] = CurrentSamples[innerLoopIndex];    
                CurrentSamples[innerLoopIndex] = Temp;   
+      }
     }
   }
   for (LoopIndex = 0; LoopIndex<NumOfCurrentSamples ; LoopIndex++) {
