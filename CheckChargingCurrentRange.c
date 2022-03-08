@@ -41,11 +41,12 @@ int CheckChargingCurrentSamplesRange (int *CurrentSamples, int NumOfCurrentSampl
     printf("ConsecutiveSample %d \n",ConsecutiveSample);
     //NumOfConsecutiveRange = NumOfConsecutiveRange+ConsecutiveSample;
     if(!ConsecutiveSample){
-      printf("NumOfChargingCurrentRanges %d \n",NumOfChargingCurrentRanges);
+      printf("NumOfChargingCurrentRanges1 %d \n",NumOfChargingCurrentRanges);
       NumOfChargingCurrentRanges++;
     }
     else if(LoopIndex == (NumOfCurrentSamples-2)){
       NumOfChargingCurrentRanges++;
+      printf("NumOfChargingCurrentRanges2 %d \n",NumOfChargingCurrentRanges);
     }
   }
   return NumOfChargingCurrentRanges;
