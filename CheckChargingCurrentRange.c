@@ -20,12 +20,15 @@ int FindConsecutiveSamples(int Sample1,int Sample2)
   int DifferenceBetweenSamples;
   int ConsecutiveSample =0;
   DifferenceBetweenSamples = Sample2 - Sample1;
-  printf("DifferenceBetweenSamples %d \n",DifferenceBetweenSamples);
   if((DifferenceBetweenSamples == 0) || (DifferenceBetweenSamples == 1))
   {
     ConsecutiveSample = 1;
   }   
   return ConsecutiveSample;
+}
+
+void PrintFunction(int MinRangeValue, int MaxRangeValue, int NumOfOccurenceInRange){
+  printf("\n%d-%d , %d", MinRangeValue, MaxRangeValue, NumOfOccurenceInRange);
 }
 
 int CheckChargingCurrentSamplesRange (int *CurrentSamples, int NumOfCurrentSamples){
@@ -35,20 +38,20 @@ int CheckChargingCurrentSamplesRange (int *CurrentSamples, int NumOfCurrentSampl
   int LoopIndex;
   
   SortArray(CurrentSamples,NumOfCurrentSamples);
-  
+  LowerRangeValue = CurrentSamples[0];
   for (LoopIndex = 0; LoopIndex< (NumOfCurrentSamples-1) ; LoopIndex++) {
     ConsecutiveSample = FindConsecutiveSamples(CurrentSamples[LoopIndex],CurrentSamples[LoopIndex+1]);
-    printf("ConsecutiveSample %d \n",ConsecutiveSample);
-    //NumOfConsecutiveRange = NumOfConsecutiveRange+ConsecutiveSample;
+    NumOfConsecutiveRange = NumOfConsecutiveRange+ConsecutiveSample;
     if(!ConsecutiveSample){
-      printf("NumOfChargingCurrentRanges1 %d \n",NumOfChargingCurrentRanges);
+      PrintFunction(LowerRangeValue,CurrentSamples[LoopIndex] , (NumOfConsecutiveRange+1));
+      LowerRangeValue = CurrentSamples[LoopIndex+1];
+      NumOfConsecutiveRange = 0;
       NumOfChargingCurrentRanges++;
     }
     if(LoopIndex == (NumOfCurrentSamples-2)){
+      PrintFunction(LowerRangeValue,CurrentSamples[LoopIndex+1] , (NumOfConsecutiveRange+1));
       NumOfChargingCurrentRanges++;
-      printf("NumOfChargingCurrentRanges2 %d \n",NumOfChargingCurrentRanges);
     }
   }
-  printf("NumOfChargingCurrentRanges3 %d \n",NumOfChargingCurrentRanges);
   return NumOfChargingCurrentRanges;
 }
