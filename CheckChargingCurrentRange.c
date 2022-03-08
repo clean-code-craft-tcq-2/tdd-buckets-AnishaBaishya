@@ -16,6 +16,7 @@ int CheckChargingCurrentSamplesRange (int *CurrentSamples){
                Temp = CurrentSamples[LoopIndex];    
                CurrentSamples[LoopIndex] = CurrentSamples[innerLoopIndex];    
                CurrentSamples[innerLoopIndex] = Temp;   
+               printf(Temp %d ,CurrentSamples[LoopIndex] %d ,CurrentSamples[innerLoopIndex] %d \n",Temp,CurrentSamples[LoopIndex],CurrentSamples[innerLoopIndex]);
       }
     }
   }
