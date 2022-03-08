@@ -29,3 +29,9 @@ TEST_CASE("Test Instance 4 : Check range for 4 current samples") {
   int CurrentSamples[] = {4,10,5,11};
   REQUIRE(CheckChargingCurrentSamplesRange(CurrentSamples, 4) == 2);
 }
+
+// Test Instance 5 : before starting the coding : TC PASSED
+TEST_CASE("Test Instance 5 : Check range for example current samples") {
+  int CurrentSamples[] = {3, 3, 5, 4, 10, 11, 12};
+  REQUIRE(CheckChargingCurrentSamplesRange(CurrentSamples, 7) == 2);
+}
