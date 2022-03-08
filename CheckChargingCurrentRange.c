@@ -19,7 +19,7 @@ int CheckChargingCurrentSamplesRange (int *CurrentSamples){
       }
     }
   }
-  for (LoopIndex = 0; LoopIndex<NumOfCurrentSamples-1 ; LoopIndex++) {
+  for (LoopIndex = 0; LoopIndex< (NumOfCurrentSamples-1) ; LoopIndex++) {
     DifferenceBetweenSamples = CurrentSamples[LoopIndex + 1] - CurrentSamples[LoopIndex];
     if((DifferenceBetweenSamples == 0) || (DifferenceBetweenSamples == 1)){
       NumOfConsecutiveRange ++;
