@@ -35,6 +35,7 @@ int CheckChargingCurrentSamplesRange (int *CurrentSamples, int NumOfCurrentSampl
   int NumOfConsecutiveRange = 0;
   int NumOfChargingCurrentRanges = 0;
   int ConsecutiveSample;
+  int LowerRangeValue;
   int LoopIndex;
   
   SortArray(CurrentSamples,NumOfCurrentSamples);
