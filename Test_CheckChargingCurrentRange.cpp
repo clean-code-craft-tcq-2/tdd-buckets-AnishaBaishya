@@ -20,5 +20,6 @@ TEST_CASE("Test Instance 2 : Check range for samples not available in sorted for
 // Test Instance 3 : before starting the coding : BUILD FAILURE
 TEST_CASE("Test Instance 3 : Check range for 3 current samples with first and last input being consecutive") {
   int CurrentSamples[] = {4,10,5};
-  REQUIRE(CheckChargingCurrentSamplesRange(CurrentSamples, 3) == 2);
+//   REQUIRE(CheckChargingCurrentSamplesRange(CurrentSamples, 3) == 2);
+  CheckChargingCurrentSamplesRange(CurrentSamples, 3);
 }
