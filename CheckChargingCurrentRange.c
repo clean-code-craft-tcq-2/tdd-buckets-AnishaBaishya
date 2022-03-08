@@ -11,7 +11,7 @@ int CheckChargingCurrentSamplesRange (int *CurrentSamples){
   /* Sort array */
   int Temp;
   for (LoopIndex = 0; LoopIndex<NumOfCurrentSamples ; LoopIndex++) {
-    for (int innerLoopIndex = 0 ; innerLoopIndex<NumOfCurrentSamples ; innerLoopIndex++) {
+    for (int innerLoopIndex = LoopIndex+1 ; innerLoopIndex<NumOfCurrentSamples ; innerLoopIndex++) {
       if(CurrentSamples[LoopIndex] > CurrentSamples[innerLoopIndex]) {    
                Temp = CurrentSamples[LoopIndex];    
                CurrentSamples[LoopIndex] = CurrentSamples[innerLoopIndex];    
