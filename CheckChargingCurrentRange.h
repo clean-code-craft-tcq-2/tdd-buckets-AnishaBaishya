@@ -1,1 +1,1 @@
-int CheckChargingCurrentSamplesRange (int *CurrentSamples);
+int CheckChargingCurrentSamplesRange (int *CurrentSamples,int NumOfCurrentSamples);
