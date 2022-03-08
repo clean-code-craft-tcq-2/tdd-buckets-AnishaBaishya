@@ -20,7 +20,7 @@ int CheckChargingCurrentSamplesRange (int *CurrentSamples){
     }
   }
   for (LoopIndex = 0; LoopIndex<NumOfCurrentSamples ; LoopIndex++) {
-    printf("element : %d ",CurrentSamples[LoopIndex]);
+    printf("%d element : %d \n",LoopIndex,CurrentSamples[LoopIndex]);
   }
   for (LoopIndex = 0; LoopIndex< (NumOfCurrentSamples-1) ; LoopIndex++) {
     DifferenceBetweenSamples = CurrentSamples[LoopIndex + 1] - CurrentSamples[LoopIndex];
