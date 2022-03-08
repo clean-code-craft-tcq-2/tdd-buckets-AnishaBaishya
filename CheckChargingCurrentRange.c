@@ -41,6 +41,9 @@ int CheckChargingCurrentSamplesRange (int *CurrentSamples, int NumOfCurrentSampl
     if(!ConsecutiveSample){
       NumOfChargingCurrentRanges++;
     }
+    else if(LoopIndex = (NumOfCurrentSamples-2)){
+      NumOfChargingCurrentRanges++;
+    }
   }
   return NumOfChargingCurrentRanges;
 }
