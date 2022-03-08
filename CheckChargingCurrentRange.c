@@ -28,10 +28,9 @@ int FindConsecutiveSamples(int Sample1,int Sample2)
 
 int CheckChargingCurrentSamplesRange (int *CurrentSamples, int NumOfCurrentSamples){
   int NumOfConsecutiveRange;
-  int DifferenceBetweenSamples;
   int LoopIndex;
   
-  SortArray(CurrentSamples,NumOfSamples);
+  SortArray(CurrentSamples,NumOfCurrentSamples);
   
   for (LoopIndex = 0; LoopIndex< (NumOfCurrentSamples-1) ; LoopIndex++) {
     NumOfConsecutiveRange = FindConsecutiveSamples(CurrentSamples[LoopIndex],CurrentSamples[LoopIndex+1]);
