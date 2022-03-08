@@ -28,10 +28,10 @@ int FindConsecutiveSamples(int Sample1,int Sample2)
 }
 
 void PrintCsvHeading(){
-  printf("%s %t %s\n", "Range","Readings");
+  printf("%s t %s\n", "Range","Readings");
 }
 void PrintRangeValues(int MinRangeValue, int MaxRangeValue, int NumOfOccurenceInRange){
-  printf("%d-%d %t %d\n", MinRangeValue, MaxRangeValue, NumOfOccurenceInRange);
+  printf("%d-%d t %d\n", MinRangeValue, MaxRangeValue, NumOfOccurenceInRange);
 }
 
 int CheckChargingCurrentSamplesRange (int *CurrentSamples, int NumOfCurrentSamples){
