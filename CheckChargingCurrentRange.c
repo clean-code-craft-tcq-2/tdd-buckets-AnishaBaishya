@@ -10,7 +10,6 @@ int CheckChargingCurrentSamplesRange (int *CurrentSamples){
   
   NumOfCurrentSamples = sizeof(CurrentSamples)/sizeof(CurrentSamples[0]);
   printf("Size : %d \n",NumOfCurrentSamples);
-  }
   /* Sort array */
   int Temp;
   for (LoopIndex = 0; LoopIndex<NumOfCurrentSamples ; LoopIndex++) {
