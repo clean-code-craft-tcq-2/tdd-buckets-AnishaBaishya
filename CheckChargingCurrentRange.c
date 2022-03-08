@@ -12,6 +12,7 @@ int CheckChargingCurrentSamplesRange (int *CurrentSamples){
   int Temp;
   for (LoopIndex = 0; LoopIndex<NumOfCurrentSamples ; LoopIndex++) {
     for (int innerLoopIndex = LoopIndex+1 ; innerLoopIndex<NumOfCurrentSamples ; innerLoopIndex++) {
+      printf("LoopIndex %d , innerLoopIndex %d ,CurrentSamples[LoopIndex] %d ,CurrentSamples[innerLoopIndex] %d \n",LoopIndex,innerLoopIndex,CurrentSamples[LoopIndex],CurrentSamples[innerLoopIndex]);
       if(CurrentSamples[LoopIndex] > CurrentSamples[innerLoopIndex]) {    
                Temp = CurrentSamples[LoopIndex];    
                CurrentSamples[LoopIndex] = CurrentSamples[innerLoopIndex];    
