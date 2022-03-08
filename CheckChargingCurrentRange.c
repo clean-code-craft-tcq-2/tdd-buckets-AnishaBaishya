@@ -2,16 +2,17 @@
 #include "CheckChargingCurrentRange.h"
 
 void SortArray(int ChargingCurrentSamplesArray[], int NumOfCurrentSamples){
-  int Temp, LoopIndex, innerLoopIndex;
-  for (LoopIndex = 0; LoopIndex<NumOfCurrentSamples ; LoopIndex++) {
-    for (innerLoopIndex = (LoopIndex+1) ; innerLoopIndex<NumOfCurrentSamples ; innerLoopIndex++) {
-      if(ChargingCurrentSamplesArray[LoopIndex] > ChargingCurrentSamplesArray[innerLoopIndex]) {    
-               Temp = ChargingCurrentSamplesArray[LoopIndex];    
-               ChargingCurrentSamplesArray[LoopIndex] = ChargingCurrentSamplesArray[innerLoopIndex];    
-               ChargingCurrentSamplesArray[innerLoopIndex] = Temp;   
-      }
+  int i = 0;
+  while (++i < NumOfCurrentSamples)
+  {
+    if (ChargingCurrentSamplesArray[i] < ChargingCurrentSamplesArray[i-1])
+    {
+      int tmp = ChargingCurrentSamplesArray[i]; 
+      ChargingCurrentSamplesArray[i] = ChargingCurrentSamplesArray[i-1];
+      ChargingCurrentSamplesArray[i-1] = tmp;
+      i = 0;
     }
-  }
+  }  
 }
 
 int FindConsecutiveSamples(int Sample1,int Sample2)
