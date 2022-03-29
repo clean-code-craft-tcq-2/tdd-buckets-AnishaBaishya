@@ -37,12 +37,14 @@ void AtoDConvert(int CurrentSamplesAnalog[],int NumOfCurrentSamples,int CurrentS
 	int totalCurrentRange;
 	float currentCurrentValue;
 	int maxConverterValue; 
+	float conversionValue;
+	float scalingFactor;
 	
 	maxConverterValue = GetMaxValueOfConverter(A2DResolution);
 	totalCurrentRange = calculateTotalCurrentRange(MaxCurrentValue, MinCurrentValue);
 	scalingFactor = calculateMultiplyingFactor(totalCurrentRange, MaxCurrentValue);
 	for (loopIndex=0; loopIndex< NumOfCurrentSamples; loopIndex++){
-		conversionValue = calculateMultiplyingFactor(CurrentSamplesAnalog[i], maxConverterValue);
+		conversionValue = calculateMultiplyingFactor(CurrentSamplesAnalog[loopIndex], maxConverterValue);
 		currentCurrentValue = convertInputIntegerToCurrentValue(conversionValue, scalingFactor, MinCurrentValue, MaxCurrentValue);
 		CurrentSamplesDigital[loopIndex] = round(currentCurrentValue);
 		if(CurrentSamplesDigital[loopIndex] <0){
