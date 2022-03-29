@@ -66,7 +66,7 @@ bool ConvertAnalogToDigitalAmpere(int *CurrentSamplesAnalog,int NumOfCurrentSamp
   }
   if(AreAllSamplesOk == ALL_SAMPLES_OK)
   {
-	 AtoDConvert(CurrentSamplesAnalog, NumOfCurrentSamples,CurrentSamplesDigital,int A2DResolution, int MaxCurrentValue, int MinCurrentValue);
+	 AtoDConvert(CurrentSamplesAnalog, NumOfCurrentSamples,CurrentSamplesDigital, A2DResolution, MaxCurrentValue, MinCurrentValue);
   }
   
   return AreAllSamplesOk ;
