@@ -76,16 +76,16 @@ TEST_CASE("Test Instance 2 : Test Conversion and Setting of Ranges for 12 bit") 
 #define MINCURRENTVALUE -15
 
 TEST_CASE("Test Instance 3 : Test Conversion and Setting of Ranges for 10 bit") {
-  int CurrentSamplesAnalog[] = {1022,511,0};
-  int numberOfSamples = sizeof(CurrentSamplesAnalog) / sizeof(CurrentSamplesAnalog[0]);
-  int CurrentSamplesDigital[numberOfSamples];
+  int CurrentSamplesAnalog_10bit[] = {1022,511,0};
+  int numberOfSamples = sizeof(CurrentSamplesAnalog_10bit) / sizeof(CurrentSamplesAnalog_10bit[0]);
+  int CurrentSamplesDigital_10bit[numberOfSamples];
   
-  int ExpectedCurrentinAmps[] = {15,0,15};
-  REQUIRE(ConvertAnalogToDigitalAmpere(CurrentSamplesAnalog, numberOfSamples,CurrentSamplesDigital,A2D_RESOLUTION,MAXCURRENTVALUE,MINCURRENTVALUE) == ALL_SAMPLES_OK);
+  int ExpectedCurrentinAmps_10bit[] = {15,0,15};
+  REQUIRE(ConvertAnalogToDigitalAmpere(CurrentSamplesAnalog_10bit, numberOfSamples,CurrentSamplesDigital_10bit,A2D_RESOLUTION,MAXCURRENTVALUE,MINCURRENTVALUE) == ALL_SAMPLES_OK);
   for(int i = 0; i < numberOfSamples; ++i)
 	{
-		REQUIRE(CurrentSamplesDigital[i] == ExpectedCurrentinAmps[i]);
+		REQUIRE(CurrentSamplesDigital_10bit[i] == ExpectedCurrentinAmps_10bit[i]);
 	}
-  REQUIRE(CheckChargingCurrentSamplesRange(CurrentSamplesDigital, numberOfSamples) == 2);
+  REQUIRE(CheckChargingCurrentSamplesRange(CurrentSamplesDigital_10bit, numberOfSamples) == 2);
 }
 	
