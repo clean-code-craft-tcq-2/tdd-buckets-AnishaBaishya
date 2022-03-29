@@ -13,7 +13,7 @@ bool ConvertAnalogToDigitalAmpere(int *CurrentSamples,int NumOfCurrentSamples){
   int loopIndex;
   
   for(loopIndex=0;loopIndex<NumOfCurrentSamples;loopIndex++){
-    if(CurrentSamples[i] > 4094)
+    if(CurrentSamples[loopIndex] > 4094)
 		{
       AreAllSamplesOk = ALL_SAMPLES_NOT_OK;
 			PrintReadingFaultyMessage();	
