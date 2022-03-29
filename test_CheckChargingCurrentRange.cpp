@@ -2,6 +2,7 @@
 
 #include "test/catch.hpp"
 #include "CheckChargingCurrentRange.h"
+#include "A2DConverter.h"
 
 // Test Instance 1 : before starting the coding : TC FAILED
 TEST_CASE("Test Instance 1 : Check range for 2 consecutive current samples") {
@@ -46,5 +47,5 @@ TEST_CASE("Test Instance 5 : Check range for example current samples") {
 TEST_CASE("Test Instance 1 : Error Reading available") {
   int CurrentSamples[] = {4095};
   int numberOfSamples = sizeof(CurrentSamples) / sizeof(CurrentSamples[0]);
-  ConvertAnalogToDigitalAmpere(CurrentSamples, numberOfSamples);
+  REQUIRE(ConvertAnalogToDigitalAmpere(CurrentSamples, numberOfSamples) == ALL_SAMPLES_NOT_OK);
 }
