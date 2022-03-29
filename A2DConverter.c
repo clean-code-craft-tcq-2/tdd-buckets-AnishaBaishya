@@ -15,7 +15,9 @@ void AtoDConvert(int *CurrentSamplesAnalog,int NumOfCurrentSamples,int *CurrentS
 	
 	for (int loopIndex=0; loopIndex< NumOfCurrentSamples; loopIndex++){
 		currentCurrentValue = ((10 * CurrentSamplesAnalog[loopIndex]) / 4094);
+		printf("BeforeRound : %f\n",CurrentSamplesAnalog[loopIndex]);
 		CurrentSamplesDigital[loopIndex] = round(currentCurrentValue);
+		printf("AfterRound : %f\n",CurrentSamplesAnalog[loopIndex]);
 		if(CurrentSamplesDigital[loopIndex] < 0)
 		{
 			CurrentSamplesDigital[loopIndex] = abs(CurrentSamplesDigital[loopIndex]);
