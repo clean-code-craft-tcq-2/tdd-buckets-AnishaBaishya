@@ -67,11 +67,11 @@ TEST_CASE("Test Instance 1 : Error Reading available") {
 
 // Test Instance 3 
 TEST_CASE("Test Instance 3 : Test Conversion and Setting of Ranges") {
-  CurrentSamplesAnalog[] = {4094, 819,3790,1230,1640,2870};
-  numberOfSamples = sizeof(CurrentSamplesAnalog) / sizeof(CurrentSamplesAnalog[0]);
-  CurrentSamplesDigital[numberOfSamples];
+  int CurrentSamplesAnalog[] = {4094, 819,3790,1230,1640,2870};
+  int numberOfSamples = sizeof(CurrentSamplesAnalog) / sizeof(CurrentSamplesAnalog[0]);
+  int CurrentSamplesDigital[numberOfSamples];
   
-  ExpectedCurrentinAmps[] = {10, 2, 9, 3, 4 , 7};
+  int ExpectedCurrentinAmps[] = {10, 2, 9, 3, 4 , 7};
   REQUIRE(ConvertAnalogToDigitalAmpere(CurrentSamplesAnalog, numberOfSamples,CurrentSamplesDigital) == ALL_SAMPLES_OK);
   for(int i = 0; i < numberOfSamples; ++i)
 	{
