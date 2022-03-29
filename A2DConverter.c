@@ -8,16 +8,16 @@ void PrintReadingFaultyMessage(void)
 	printf("Readings are faulty\n");
 }
 
-int GetMaxValueOfConverter(int A2D_RESOLUTION)
+int GetMaxValueOfConverter(int ResolutionSize)
 {
-	return (pow(2,A2D_RESOLUTION) - 2);
+	return (pow(2,ResolutionSize) - 2);
 }
 
 void AtoDConvert(int CurrentSamplesAnalog[],int NumOfCurrentSamples,int CurrentSamplesDigital[]){
 	int loopIndex;
 	float currentCurrentValue;
 	
-	for (int loopIndex=0; loopIndex< NumOfCurrentSamples; loopIndex++){
+	for (loopIndex=0; loopIndex< NumOfCurrentSamples; loopIndex++){
 		currentCurrentValue = ((MAXCURRENTVALUE  * CurrentSamplesAnalog[loopIndex]) / (GetMaxValueOfConverter(A2D_RESOLUTION)));
 		CurrentSamplesDigital[loopIndex] = round(currentCurrentValue);
 	}
