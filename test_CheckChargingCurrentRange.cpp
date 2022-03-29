@@ -51,19 +51,19 @@ TEST_CASE("Test Instance 1 : Error Reading available") {
   REQUIRE(ConvertAnalogToDigitalAmpere(CurrentSamplesAnalog, numberOfSamples,CurrentSamplesDigital) == ALL_SAMPLES_NOT_OK);
 }
 
-// Test Instance 2 
-TEST_CASE("Test Instance 2 : Test Conversion") {
-  int CurrentSamplesAnalog[] = {0,819,1640,2870,4094};
-  int numberOfSamples = sizeof(CurrentSamplesAnalog) / sizeof(CurrentSamplesAnalog[0]);
-  int CurrentSamplesDigital[numberOfSamples];
+// // Test Instance 2 
+// TEST_CASE("Test Instance 2 : Test Conversion") {
+//   int CurrentSamplesAnalog[] = {0,819,1640,2870,4094};
+//   int numberOfSamples = sizeof(CurrentSamplesAnalog) / sizeof(CurrentSamplesAnalog[0]);
+//   int CurrentSamplesDigital[numberOfSamples];
   
-  int ExpectedCurrentinAmps[] = {0, 2, 4 , 7 , 10};
-  REQUIRE(ConvertAnalogToDigitalAmpere(CurrentSamplesAnalog, numberOfSamples,CurrentSamplesDigital) == ALL_SAMPLES_OK);
-  for(int i = 0; i < numberOfSamples; ++i)
-	{
-		REQUIRE(CurrentSamplesDigital[i] == ExpectedCurrentinAmps[i]);
-	}
-}
+//   int ExpectedCurrentinAmps[] = {0, 2, 4 , 7 , 10};
+//   REQUIRE(ConvertAnalogToDigitalAmpere(CurrentSamplesAnalog, numberOfSamples,CurrentSamplesDigital) == ALL_SAMPLES_OK);
+//   for(int i = 0; i < numberOfSamples; ++i)
+// 	{
+// 		REQUIRE(CurrentSamplesDigital[i] == ExpectedCurrentinAmps[i]);
+// 	}
+// }
 
 // Test Instance 3 
 TEST_CASE("Test Instance 3 : Test Conversion and Setting of Ranges") {
