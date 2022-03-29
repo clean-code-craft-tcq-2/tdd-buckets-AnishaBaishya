@@ -4,6 +4,10 @@
 #include "CheckChargingCurrentRange.h"
 #include "A2DConverter.h"
 
+#define A2D_RESOLUTION  12
+#define MAXCURRENTVALUE 10
+#define MINCURRENTVALUE 0
+
 // Test Instance 1 : before starting the coding : TC FAILED
 TEST_CASE("Test Instance 1 : Check range for 2 consecutive current samples") {
   int CurrentSamples[] = {4,5};
@@ -48,7 +52,7 @@ TEST_CASE("Test Instance 1 : Error Reading available") {
   int CurrentSamplesAnalog[] = {4095};
   int numberOfSamples = sizeof(CurrentSamplesAnalog) / sizeof(CurrentSamplesAnalog[0]);
   int CurrentSamplesDigital[numberOfSamples];
-  REQUIRE(ConvertAnalogToDigitalAmpere(CurrentSamplesAnalog, numberOfSamples,CurrentSamplesDigital) == ALL_SAMPLES_NOT_OK);
+  REQUIRE(ConvertAnalogToDigitalAmpere(CurrentSamplesAnalog, numberOfSamples,CurrentSamplesDigital,A2D_RESOLUTION,MAXCURRENTVALUE,MINCURRENTVALUE) == ALL_SAMPLES_NOT_OK);
 }
 
 // Test Instance 2 
@@ -58,7 +62,7 @@ TEST_CASE("Test Instance 2 : Test Conversion and Setting of Ranges") {
   int CurrentSamplesDigital[numberOfSamples];
   
   int ExpectedCurrentinAmps[] = {10, 2, 9, 3, 4 , 7};
-  REQUIRE(ConvertAnalogToDigitalAmpere(CurrentSamplesAnalog, numberOfSamples,CurrentSamplesDigital) == ALL_SAMPLES_OK);
+  REQUIRE(ConvertAnalogToDigitalAmpere(CurrentSamplesAnalog, numberOfSamples,CurrentSamplesDigital,A2D_RESOLUTION,MAXCURRENTVALUE,MINCURRENTVALUE) == ALL_SAMPLES_OK);
   for(int i = 0; i < numberOfSamples; ++i)
 	{
 		REQUIRE(CurrentSamplesDigital[i] == ExpectedCurrentinAmps[i]);
