@@ -9,7 +9,7 @@ void PrintReadingFaultyMessage(void)
 	printf("Readings are faulty\n");
 }
 
-void AtoDConvert(int *CurrentSamplesAnalog,int NumOfCurrentSamples,int *CurrentSamplesDigital){
+void AtoDConvert(int CurrentSamplesAnalog[],int NumOfCurrentSamples,int CurrentSamplesDigital[]){
 	int loopIndex;
 	float currentCurrentValue;
 	
