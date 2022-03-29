@@ -1,5 +1,5 @@
 #define ALL_SAMPLES_OK      1
 #define ALL_SAMPLES_NOT_OK  0
 
-bool ConvertAnalogToDigitalAmpere(int *CurrentSamples,int NumOfCurrentSamples);
+bool ConvertAnalogToDigitalAmpere(int *CurrentSamplesAnalog,int NumOfCurrentSamples,int *CurrentSamplesDigital);
 void PrintReadingFaultyMessage(void);
