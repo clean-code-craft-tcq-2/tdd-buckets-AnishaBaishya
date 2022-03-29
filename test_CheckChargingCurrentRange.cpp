@@ -56,7 +56,7 @@ TEST_CASE("Test Instance 1 : Error Reading available") {
 }
 
 // Test Instance 2 
-TEST_CASE("Test Instance 2 : Test Conversion and Setting of Ranges") {
+TEST_CASE("Test Instance 2 : Test Conversion and Setting of Ranges for 12 bit") {
   int CurrentSamplesAnalog[] = {4094, 819,3790,1230,1640,2870};
   int numberOfSamples = sizeof(CurrentSamplesAnalog) / sizeof(CurrentSamplesAnalog[0]);
   int CurrentSamplesDigital[numberOfSamples];
@@ -69,3 +69,23 @@ TEST_CASE("Test Instance 2 : Test Conversion and Setting of Ranges") {
 	}
   REQUIRE(CheckChargingCurrentSamplesRange(CurrentSamplesDigital, numberOfSamples) == 3);
 }
+
+// Test Instance 3 
+#define A2D_RESOLUTION  10
+#define MAXCURRENTVALUE 15
+#define MINCURRENTVALUE -15
+
+TEST_CASE("Test Instance 3 : Test Conversion and Setting of Ranges for 10 bit") {
+  int CurrentSamplesAnalog[] = {1022,511,0};
+  int numberOfSamples = sizeof(CurrentSamplesAnalog) / sizeof(CurrentSamplesAnalog[0]);
+  int CurrentSamplesDigital[numberOfSamples];
+  
+  int ExpectedCurrentinAmps[] = {15,0,15};
+  REQUIRE(ConvertAnalogToDigitalAmpere(CurrentSamplesAnalog, numberOfSamples,CurrentSamplesDigital,A2D_RESOLUTION,MAXCURRENTVALUE,MINCURRENTVALUE) == ALL_SAMPLES_OK);
+  for(int i = 0; i < numberOfSamples; ++i)
+	{
+		REQUIRE(CurrentSamplesDigital[i] == ExpectedCurrentinAmps[i]);
+	}
+  REQUIRE(CheckChargingCurrentSamplesRange(CurrentSamplesDigital, numberOfSamples) == 2);
+}
+	
