@@ -73,9 +73,9 @@ TEST_CASE("Test Instance 3 : Test Conversion and Setting of Ranges") {
   
   int ExpectedCurrentinAmps[] = {10, 2, 9, 3, 4 , 7};
   REQUIRE(ConvertAnalogToDigitalAmpere(CurrentSamplesAnalog, numberOfSamples,CurrentSamplesDigital) == ALL_SAMPLES_OK);
-  REQUIRE(CheckChargingCurrentSamplesRange(CurrentSamplesDigital, numberOfSamples) == 3);
   for(int i = 0; i < numberOfSamples; ++i)
 	{
 		REQUIRE(CurrentSamplesDigital[i] == ExpectedCurrentinAmps[i]);
 	}
+  REQUIRE(CheckChargingCurrentSamplesRange(CurrentSamplesDigital, numberOfSamples) == 3);
 }
