@@ -39,7 +39,7 @@ TEST_CASE("Test Instance 5 : Check range for example current samples") {
   int CurrentSamples[] = {3, 3, 5, 4, 10, 11, 12};
   int numberOfSamples = sizeof(CurrentSamples) / sizeof(CurrentSamples[0]);
   REQUIRE(CheckChargingCurrentSamplesRange(CurrentSamples, numberOfSamples) == 2);
- 
+}
   
 //A2D Conversion
 // Test Instance 1 
