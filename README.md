@@ -53,6 +53,8 @@ Start Test-driven approach
 1. Refactor any assumptions, continue to pass this test. Do not add any code without a corresponding test.
 
 
+## New Feature implementation :Current-sensing at high fidelity
+
 ## TestSpec
 
 1. Get charging current samples array in Analog
