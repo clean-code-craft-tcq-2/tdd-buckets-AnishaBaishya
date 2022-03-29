@@ -56,7 +56,7 @@ Start Test-driven approach
 ## TestSpec
 
 1. Get charging current samples array in Analog
-2. Ensure that all sample values are within maximum range as supported by the converter (depends on Resolution)
+2. Ensure that all sample values are within maximum range as supported by the converter (depends on Resolution). Proceed only if all samples are valid, else terminate with relevant display message
 3. Convert the samples data to Digital value
 4. Sort the array in ascending order
 5. Arrange array samples into consecutive ranges and calculate frequency of each range value
