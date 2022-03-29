@@ -7,4 +7,3 @@ float convertInputIntegerToCurrentValue(float conversionValue, float scalingFact
 int calculateTotalCurrentRange(int maxCurrentValue, int minCurrentValue);
 float calculateMultiplyingFactor(int x, int y);
 int GetMaxValueOfConverter(int ResolutionSize);
-void AtoDConvert(int CurrentSamplesAnalog[],int NumOfCurrentSamples,int CurrentSamplesDigital[],int A2DResolution, int MaxCurrentValue, int MinCurrentValue);
