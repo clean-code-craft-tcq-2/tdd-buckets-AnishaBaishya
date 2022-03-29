@@ -53,8 +53,14 @@ TEST_CASE("Test Instance 1 : Error Reading available") {
 
 // Test Instance 2 
 TEST_CASE("Test Instance 2 : Error Reading available") {
-  int CurrentSamplesAnalog[] = {0,410,819,1146,1640,4094};
+  int CurrentSamplesAnalog[] = {0,819,1146,1640,2870,4094};
   int numberOfSamples = sizeof(CurrentSamplesAnalog) / sizeof(CurrentSamplesAnalog[0]);
   int CurrentSamplesDigital[numberOfSamples];
+  
+  int ExpectedCurrentinAmps[] = {0, 2, 3, 4 , 7 , 10};
   REQUIRE(ConvertAnalogToDigitalAmpere(CurrentSamplesAnalog, numberOfSamples,CurrentSamplesDigital) == ALL_SAMPLES_OK);
+  for(int i = 0; i < numberOfSamples; ++i)
+	{
+		REQUIRE(CurrentSamplesDigital[i] == ExpectedCurrentinAmps[i]);
+	}
 }
