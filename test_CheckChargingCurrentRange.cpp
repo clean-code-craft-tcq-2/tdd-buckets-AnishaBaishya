@@ -45,7 +45,16 @@ TEST_CASE("Test Instance 5 : Check range for example current samples") {
 //A2D Conversion
 // Test Instance 1 
 TEST_CASE("Test Instance 1 : Error Reading available") {
-  int CurrentSamples[] = {4095};
-  int numberOfSamples = sizeof(CurrentSamples) / sizeof(CurrentSamples[0]);
-  REQUIRE(ConvertAnalogToDigitalAmpere(CurrentSamples, numberOfSamples) == ALL_SAMPLES_NOT_OK);
+  int CurrentSamplesAnalog[] = {4095};
+  int numberOfSamples = sizeof(CurrentSamplesAnalog) / sizeof(CurrentSamplesAnalog[0]);
+  int CurrentSamplesDigital[numberOfSamples];
+  REQUIRE(ConvertAnalogToDigitalAmpere(CurrentSamplesAnalog, numberOfSamples,CurrentSamplesDigital) == ALL_SAMPLES_NOT_OK);
+}
+
+// Test Instance 2 
+TEST_CASE("Test Instance 2 : Error Reading available") {
+  int CurrentSamplesAnalog[] = {0,410,819,1146,1640,4094};
+  int numberOfSamples = sizeof(CurrentSamplesAnalog) / sizeof(CurrentSamplesAnalog[0]);
+  int CurrentSamplesDigital[numberOfSamples];
+  REQUIRE(ConvertAnalogToDigitalAmpere(CurrentSamplesAnalog, numberOfSamples,CurrentSamplesDigital) == ALL_SAMPLES_OK);
 }
